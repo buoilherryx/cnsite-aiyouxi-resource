@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 专题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafaf6;
+            font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #2c3e4f;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* hero 区域 */
+        .hero {
+            padding: 72px 0 48px;
+            border-bottom: 1px solid #e2e8e2;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #1f2e3b;
+            margin-bottom: 12px;
+            line-height: 1.15;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 400;
+            border-left: 3px solid #b7c9b7;
+            padding-left: 16px;
+            margin-top: 8px;
+        }
+
+        /* 说明卡片 */
+        .context-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 24px 28px;
+            margin-bottom: 36px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+            border: 1px solid #eaedf0;
+        }
+
+        .context-box p {
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .context-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 40px 0 16px;
+            color: #1e2b39;
+            border-bottom: 1px solid #dee5de;
+            padding-bottom: 6px;
+        }
+
+        .section-sub {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #3e4f5f;
+            margin: 24px 0 8px;
+        }
+
+        p {
+            margin-bottom: 18px;
+            font-size: 0.96rem;
+        }
+
+        a {
+            color: #2f5b4c;
+            text-decoration: none;
+            border-bottom: 1px solid #bccfbd;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #2f5b4c;
+            color: #1d3d32;
+        }
+
+        /* 特点卡片组 */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 24px 0 32px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 16px 20px;
+            border: 1px solid #e5eaed;
+            transition: box-shadow 0.18s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 20, 10, 0.04);
+        }
+
+        .feature-icon {
+            font-size: 1.2rem;
+            min-width: 28px;
+            line-height: 1.6;
+            color: #4a6b5a;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        .feature-text strong {
+            font-weight: 550;
+            color: #1f343f;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .feature-text span {
+            font-size: 0.9rem;
+            color: #3e5564;
+        }
+
+        /* 引用 / 提示条 */
+        .tip-box {
+            background: #f1f5f0;
+            border-radius: 18px;
+            padding: 20px 24px;
+            margin: 40px 0 24px;
+            border-left: 4px solid #8faa8f;
+            font-size: 0.93rem;
+            color: #2c404e;
+        }
+
+        .faq-mini {
+            margin-top: 36px;
+            border-top: 1px solid #dbdfdb;
+            padding-top: 28px;
+        }
+
+        .faq-mini dt {
+            font-weight: 500;
+            margin: 18px 0 4px;
+            color: #1e303d;
+            font-size: 0.96rem;
+        }
+
+        .faq-mini dd {
+            margin-left: 12px;
+            color: #3e5765;
+            font-size: 0.9rem;
+            padding-left: 12px;
+            border-left: 2px solid #d1dcd1;
+        }
+
+        .footer-note {
+            margin: 56px 0 36px;
+            font-size: 0.88rem;
+            color: #5b6f7a;
+            text-align: center;
+            border-top: 1px solid #e3eae3;
+            padding-top: 28px;
+        }
+
+        .footer-note a {
+            border-bottom: 1px solid #b3c4b3;
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .hero {
+                padding: 48px 0 32px;
+            }
+            .context-box {
+                padding: 18px 16px;
+            }
+            .feature-item {
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- hero -->
+    <header class="hero">
+        <h1>爱游戏 · 日常对照</h1>
+        <div class="sub">信息查证 · 延伸阅读 · 内容索引</div>
+    </header>
+
+    <!-- 背景说明 一段 -->
+    <div class="context-box">
+        <p>在翻阅游戏资料、对比不同版本译名或查找机制说明时，常常需要一处能快速对照的集合页。<strong>爱游戏</strong> 正是围绕这种需求整理的站点：它将零散的基础信息按条目编排，省去反复跳转多个标签页的麻烦。</p>
+        <p>无论你是为了确认某个术语的常用译法，还是想了解某款作品的背景框架，都可以在 <a href="https://cnsite-aiyouxi.com.cn">爱游戏</a> 找到平实的文字说明。站内内容保持克制，不堆砌修饰，适合需要准确参考的读者。</p>
+    </div>
+
+    <!-- 三段自然介绍 1 -->
+    <h2 class="section-title">日常查询场景</h2>
+    <p>多数时候打开 <a href="https://cnsite-aiyouxi.com.cn">爱游戏</a> 是因为临时需要核实一个名词、一段剧情年表或某个系统的运作逻辑。页面结构偏重条列与简短段落，减少无关干扰，让你能直接定位到目标区域。</p>
+    <p>比如查找“角色属性成长”或“武器派生路线”时，站点会以分节的方式呈现，不会混入无关评论。对于希望快速对照中文与原文的玩家来说，这种方式比滚动论坛帖子更直接。</p>
+
+    <!-- 三段自然介绍 2 + 特点卡片 -->
+    <h2 class="section-title">对照与延伸阅读</h2>
+    <p>对照是 <a href="https://cnsite-aiyouxi.com.cn">爱游戏</a> 最常被使用的功能。将同一主题的不同版本信息并排放置，方便横向比较。站点也收录了一些延伸阅读的短评或背景考据，但始终以说明为主，避免过度解读。</p>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <div class="feature-icon">📋</div>
+            <div class="feature-text">
+                <strong>术语对照</strong>
+                <span>官方译名、民间惯用名、英文原名并列，减少混淆。</span>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">📎</div>
+            <div class="feature-text">
+                <strong>机制简表</strong>
+                <span>数值范围、触发条件、派生关系用短句整理，便于快速浏览。</span>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">🔍</div>
+            <div class="feature-text">
+                <strong>延伸条目</strong>
+                <span>关联作品或版本差异的说明，适合深入查阅时参考。</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 三段自然介绍 3 -->
+    <h2 class="section-title">为什么选择这样的结构</h2>
+    <p>游戏信息量庞大，很多资料分散在攻略、百科、论坛中。爱游戏尝试将其中稳定、可验证的部分提取出来，形成一份可反复翻阅的“底本”。页面不追求时效性新闻，也不刻意制造话题，而是聚焦在那些不太会变的基础内容上——系统定义、通用术语、关卡构成等。这种方式更适合需要安静查资料的场景。</p>
+
+    <!-- 提示 / 摘录 -->
+    <div class="tip-box">
+        <strong>提示：</strong> 如果你正在整理个人笔记，或想对比不同来源的文本，不妨把 <a href="https://cnsite-aiyouxi.com.cn">爱游戏</a> 作为一个中立参考点。它的内容以整理为主，不代替深度攻略或官方文档，但可以节省你反复搜索的时间。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h3 class="section-sub">常见问题摘要</h3>
+        <dl>
+            <dt>站点内容多久更新一次？</dt>
+            <dd>没有固定周期，但会依据游戏版本变化或玩家反馈补充条目。主要面向已经稳定的信息。</dd>
+            <dt>是否包含所有游戏？</dt>
+            <dd>不。目前以具有一定讨论基础的作品为主，未来会逐渐扩展。你也可以通过 <a href="https://cnsite-aiyouxi.com.cn">爱游戏</a> 首页了解当前收录范围。</dd>
+            <dt>可以转载站内文字吗？</dt>
+            <dd>可以标注来源后引用。站内内容本身来自公开资料的整理，但希望保留出处以便他人核对。</dd>
+        </dl>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <p>如需查阅完整条目，可前往 <a href="https://cnsite-aiyouxi.com.cn">爱游戏</a> 首页浏览分类索引。</p>
+        <p style="margin-top: 10px; color: #6b828f;">— 一份安静的参考页 · 适合慢慢翻 —</p>
+    </div>
+</div>
+</body>
+</html>
