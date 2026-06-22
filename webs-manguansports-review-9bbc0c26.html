@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>满冠体育 · 稳稳的起点</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fce9d8 0%, #fde4ce 40%, #fbd6b5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+            color: #2f2b26;
+        }
+
+        .page-wrap {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+
+        /* 主视觉卡片 —— 暖白温柔 */
+        .hero-card {
+            background: #fffcf8;
+            border-radius: 3rem 3rem 2rem 2rem;
+            padding: 3rem 2.5rem 2.8rem;
+            box-shadow: 0 12px 32px rgba(180, 100, 50, 0.10), 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .hero-card h1 {
+            font-size: 2.6rem;
+            font-weight: 550;
+            letter-spacing: 0.02em;
+            color: #4d3427;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-card .subhead {
+            font-size: 1.1rem;
+            color: #7a5f4d;
+            border-top: 2px solid #f1ddd0;
+            display: inline-block;
+            padding-top: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .hero-card p {
+            margin-top: 1.6rem;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.04rem;
+            color: #4a3c33;
+        }
+
+        .hero-card .hero-link-sentence {
+            margin-top: 2rem;
+            background: #f7ede6;
+            padding: 1rem 1.8rem;
+            border-radius: 60px;
+            display: inline-block;
+            font-size: 1.05rem;
+            color: #3f3027;
+            box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.6), 0 4px 10px rgba(140, 80, 40, 0.06);
+        }
+
+        .hero-card a {
+            color: #a6522c;
+            font-weight: 520;
+            text-decoration: none;
+            border-bottom: 2px solid #ecc7b6;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .hero-card a:hover {
+            border-bottom-color: #a6522c;
+            color: #8a3f1e;
+        }
+
+        /* 信息卡片网格 */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+        }
+
+        @media (max-width: 680px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+            .hero-card {
+                padding: 2rem 1.5rem;
+            }
+            .hero-card h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .card {
+            background: #fffcf8;
+            border-radius: 2.2rem;
+            padding: 2rem 1.8rem 2.2rem;
+            box-shadow: 0 8px 20px rgba(120, 70, 40, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.15s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px rgba(130, 70, 30, 0.08);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 520;
+            color: #4d3427;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 3px solid #edd6c7;
+            display: inline-block;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 0.45rem 0 0.45rem 1.6rem;
+            position: relative;
+            font-size: 1rem;
+            color: #3d332c;
+        }
+
+        .card li::before {
+            content: "•";
+            color: #bf7b5a;
+            font-weight: 700;
+            position: absolute;
+            left: 0.2rem;
+        }
+
+        .card p {
+            margin-top: 0.5rem;
+            color: #4f3f35;
+        }
+
+        /* 自然链接段落卡片 (全宽) */
+        .link-card {
+            background: #fffcf8;
+            border-radius: 2.2rem;
+            padding: 2rem 2.2rem;
+            box-shadow: 0 8px 20px rgba(120, 70, 40, 0.05);
+            font-size: 1.04rem;
+        }
+
+        .link-card h2 {
+            font-size: 1.5rem;
+            font-weight: 520;
+            color: #4d3427;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #edd6c7;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+        }
+
+        .link-card a {
+            color: #a6522c;
+            font-weight: 510;
+            text-decoration: none;
+            border-bottom: 2px solid #ecc7b6;
+            transition: border 0.2s;
+        }
+
+        .link-card a:hover {
+            border-bottom-color: #a6522c;
+        }
+
+        .soft-faq {
+            background: #fffcf8;
+            border-radius: 2.2rem;
+            padding: 2rem 2.2rem 2.2rem;
+        }
+
+        .soft-faq h2 {
+            font-size: 1.5rem;
+            font-weight: 520;
+            color: #4d3427;
+            margin-bottom: 1.4rem;
+            border-bottom: 2px solid #edd6c7;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 520;
+            color: #4a3428;
+            margin-bottom: 0.25rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-item p {
+            color: #4f3f35;
+            padding-left: 0.4rem;
+            border-left: 3px solid #edd3c0;
+            padding-left: 0.9rem;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ddc3b0, transparent);
+            margin: 0.5rem 0 1.2rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7a6151;
+            padding: 1.5rem 0 0.2rem;
+            border-top: 1px solid #ebd5c6;
+            margin-top: 1rem;
+        }
+
+        .btn-like {
+            background: #f4e3d8;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 主视觉卡片 -->
+    <div class="hero-card">
+        <h1>满冠体育</h1>
+        <span class="subhead">稳稳的入口 · 清晰的页面</span>
+        <p>
+            一个让人感到安心的站点，往往从简洁的导航和稳定的结构开始。<br>
+            <a href="https://webs-manguansports.com">满冠体育</a> 正尝试用温和的界面语言，将运动内容与信息浏览融为一体，
+            让每一位访客都能快速找到自己关心的话题，而不必在复杂的跳转中迷失。
+        </p>
+        <div class="hero-link-sentence">
+            · 日常浏览 · 内容探索 · 运动资讯 ·
+        </div>
+    </div>
+
+    <!-- 两列卡片：用途卡片 + 适合人群 -->
+    <div class="grid-2col">
+        <div class="card">
+            <h2>常见用途</h2>
+            <ul>
+                <li>浏览运动相关文章与动态</li>
+                <li>了解不同项目的入门介绍</li>
+                <li>获取训练方法、经验分享</li>
+                <li>作为信息聚合的轻量入口</li>
+            </ul>
+            <p style="margin-top:1rem; font-size:0.95rem; color:#5f4c3f;">
+                页面结构不复杂，适合日常随手翻阅。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>适合人群</h2>
+            <ul>
+                <li>对运动保持好奇的普通读者</li>
+                <li>想找稳定内容源的新手</li>
+                <li>偏好简洁界面、不喜弹窗的用户</li>
+                <li>希望快速浏览而非深度检索的人</li>
+            </ul>
+            <p style="margin-top:1rem; font-size:0.95rem; color:#5f4c3f;">
+                没有门槛，点开就能看。
+            </p>
+        </div>
+    </div>
+
+    <!-- 自然链接段落卡片 (嵌入链接) -->
+    <div class="link-card">
+        <h2>从稳定入口说起</h2>
+        <p>
+            一个网站的入口，往往决定了第一印象。如果每次打开都能看到一致的布局、清晰的分类，用户就不必费力重新适应。
+            这正是 <a href="https://webs-manguansports.com">满冠体育</a> 在页面设计上所努力的——让内容本身成为指引，
+            而不是用闪烁的按钮或复杂的菜单来分散注意力。无论是通过手机还是电脑访问，卡片式的结构都保留了足够的呼吸感，
+            文字和图片之间有合适的留白，阅读节奏平缓。
+        </p>
+        <p style="margin-top:1rem;">
+            另外，站内各个板块之间的跳转关系也尽量简单：从首页到具体文章，通常只需要一两次点击。
+            这种克制，对于只想安静读点东西的人来说，是一种很自然的体验。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要卡片 -->
+    <div class="soft-faq">
+        <h2>或许你会好奇</h2>
+        <div class="faq-item">
+            <strong>这个网站主要提供什么？</strong>
+            <p>它以运动内容为主线，包括资讯、基础介绍、训练思路等，更像一个内容型的页面集合。</p>
+        </div>
+        <div class="faq-item">
+            <strong>页面会不会很复杂？</strong>
+            <p>整体偏向简约，卡片式布局，配色温暖，没有弹窗或自动播放，浏览负担小。</p>
+        </div>
+        <div class="faq-item">
+            <strong>移动端浏览体验如何？</strong>
+            <p>适配了窄屏，文字大小和间距都做了相应调整，在手机上阅读也不会觉得拥挤。</p>
+        </div>
+        <hr>
+        <p style="font-size:0.95rem; color:#5f4c3f;">
+            如果你正在寻找一个不浮躁、节奏舒缓的运动内容页面，不妨把 <a href="https://webs-manguansports.com">满冠体育</a> 放进书签。
+        </p>
+    </div>
+
+    <div class="footer-note">
+        <span class="btn-like">温暖 · 清晰 · 不绕路</span>
+    </div>
+
+</div>
+</body>
+</html>
